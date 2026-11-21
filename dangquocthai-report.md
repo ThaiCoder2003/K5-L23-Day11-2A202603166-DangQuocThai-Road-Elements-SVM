@@ -30,7 +30,7 @@ Số lượng shape đếm từ hai file CVAT for images 1.1 XML; không tính t
 ## 4. Phiếu QC 1 nhận được
 Bạn kiểm lô của tôi:  Quyết định nhận được:  
 | Mã lỗi | Số lỗi | Đồng ý? | Đã sửa? |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | QC1-01 | 1 | Đồng ý | Đã sửa |
 | QC1-07 | 1 | Đồng ý | Chưa sửa |
 | QC1-11 | 1 | Đồng ý | Chưa sửa |
