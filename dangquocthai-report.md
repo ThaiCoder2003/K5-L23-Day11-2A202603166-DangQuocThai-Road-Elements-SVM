@@ -2,7 +2,7 @@
 Họ tên: Đặng Quốc Thái              Mã học viên: 2A202603166  
 Phiên bản CVAT (Help → About):  2.74.1
 Guideline: Road v1.0    Lần nộp (`revision` trong manifest):  
-Thời điểm export (ngày giờ trên CVAT): 21/11/2026    Số lần nộp lại sau Rework:  
+Thời điểm export (ngày giờ trên CVAT): 21/11/2026    Số lần nộp lại sau Rework: 1
 
 ## 1. Kiểm project
 | Mục | Đúng như guideline Road v1.0? | Ghi chú |
@@ -10,8 +10,8 @@ Thời điểm export (ngày giờ trên CVAT): 21/11/2026    Số lần nộp l
 | 6 label, đúng kiểu | Đúng theo guideline  |  |
 | Thuộc tính và giá trị | Đúng theo guideline |  |
 | 4 tag ảnh | Đúng theo guideline |  |
-Cách kết thúc polyline trên bản CVAT này:  Sau khi kết thúc line, nhấp 
-Cách đặt tag ảnh trên bản CVAT này:  
+Cách kết thúc polyline trên bản CVAT này:  Sau khi kết thúc line, nhấp N để thoát polyline tại điểm cuối cùng đã annotate
+Cách đặt tag ảnh trên bản CVAT này:  Nhấp vào Tag, nhấp nút cộng cho mỗi dropdown item của nó và chọn attribute phù hợp của tag
 
 ## 2. Số lượng đã gán
 | Task | Ảnh | lane | road_curb | crosswalk | drivable | traffic_light | traffic_sign |
@@ -31,9 +31,6 @@ Số lượng shape đếm từ hai file CVAT for images 1.1 XML; không tính t
 Bạn kiểm lô của tôi:  Quyết định nhận được:  
 | Mã lỗi | Số lỗi | Đồng ý? | Đã sửa? |
 | --- | --- | --- |
- QC1-07 vùng lái | 2 | Đồng ý | chưa |
-| QC1-08 đèn, màu | bỏ sót / sai phạm vi / sai thuộc tính | 57 đèn | 4 | chính |
-| QC1-09 facing, type, group, biển phụ | sai thuộc tính | 75 biển | 1 | chính |
 | QC1-01 | 1 | Đồng ý | Đã sửa |
 | QC1-07 | 1 | Đồng ý | Chưa sửa |
 | QC1-11 | 1 | Đồng ý | Chưa sửa |
@@ -59,7 +56,7 @@ Bạn kiểm lô của tôi:  Quyết định nhận được:
 Lỗi bạn mắc nhiều nhất hôm nay (theo mã QC1-xx), và cách tránh ở Ngày 20:  
 - Lỗi mắc nhiều nhất hôm nay là lỗi đánh edge case, và để tránh lỗi này cần phải kiểm tra mép của object đi theo ngưỡng bán kính mà guideline yêu cầu
 Nhãn của bạn đi vào model ở đâu? Chọn một lỗi đã sửa và nói nó làm model học sai thế nào:  
-- Nhãn đi vào model dưới dạng Ground Truth trong dữ liệu train. Ảnh là đầu vào, còn các vùng và thuộc tính đã gán là đáp án để model học. Mình đã sửa lỗi thiếu vùng drivable trong ảnh B06. Nếu để thiếu, model có thể học rằng phần mặt đường đó không phải vùng xe đi được, khiến nó dự đoán vùng lái quá nhỏ hoặc bỏ sót đường ở những ảnh tương tự.
+- Nhãn đi vào model dưới dạng Ground Truth trong dữ liệu train. Ảnh là đầu vào, còn các vùng và thuộc tính đã gán là đáp án để model học. Mình đã sửa lỗi đặt nhầm tag Fisheye Front thành Front, điều này sẽ ảnh hưởng nghiêm trọng cho việc mô hình nhận dạng kiểu camera, dẫn đến việc phát hiện vật thể sai
 ## 8. (Tùy chọn, buffer) Từ polyline đến đích row-anchor
 | y | 720 | 680 | 640 | 600 | 560 |
 | --- | ---: | ---: | ---: | ---: | ---: |
